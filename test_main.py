@@ -14,18 +14,19 @@ R1,2020-12-08 19:18:15,O9,BT,BLT,VLT,BLT,BLT
 R1,2020-12-08 19:21:10,O10,BLT,VLT
 R1,2020-12-08 19:25:17,O11,VT,VLT
 R1,2020-12-08 19:28:17,O12,VT,VLT""".split('\n')
-data_input = [row.split(',') for row in data_input]
 
 
 class TestMain(unittest.TestCase):
     data_test = data_input
 
     def test_incorrect_input(self):
-        with self.assertRaises():
-            process_orders([])
+        with self.assertRaises(ValueError):
+            process_orders("")
+        with self.assertRaises(ValueError):
+            process_orders("Only one line")
 
     def test_one_order(self):
-        local_data = self.data_test[:2]
+        local_data = '\n'.join(self.data_test[:2])
         output_expected = """R1,O1,ACCEPTED,5
         R1,TOTAL,5
         R1,INVENTORY,94,197,197,99,99
