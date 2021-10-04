@@ -1,5 +1,5 @@
 # satis.ai
-##About the problem
+## About the problem
 **Context**: A multi branch burger that receives different orders
 
 **Problem**: Creation of a process that from a chain of orders and kitchen 
@@ -9,7 +9,7 @@ assembly and packaging of orders.
 
 **Main difficult**: Simulate a time task queue with different types of workers
 
-###INPUT
+### INPUT
 Types of row: 2
 ```
 <restautant_id>, <cooking_capacity>, <cooking_time>, <assembling_capacity>, <assembling_time>, <package_capacity>, <package_time>, <Patties inventory>,<Lettuce inventory>,<Tomato inventory>,<Veggie patties inventory>,<Bacon Inventory>
@@ -26,7 +26,7 @@ Ingredients:
 - B for Bacon
 
 Burguers are with 2 patties always
-###OUTPUT
+### OUTPUT
 
 Types of row: 3
 
