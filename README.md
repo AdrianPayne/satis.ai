@@ -25,7 +25,7 @@ Ingredients:
 - V for Veggie burger
 - B for Bacon
 
-Burguers are with 2 patties always
+Burguers are made with 1 patty.
 ### OUTPUT
 
 Types of row: 3
@@ -39,4 +39,10 @@ R1,O3,REJECTED
 R1,TOTAL,25
 <Restaurant ID>,Inventory,<Patties inventory>,<Lettuce inventory>,<Tomato inventory>,<Veggie patties inventory>,<Bacon Inventory>
 R1,INVENTORY,58,130,115,63,50
+```
+
+## Solution
+The limit of hamburgers in queue task are 12 (17min) following the next expression:
+```
+math.ceil(x/4) + 2*math.ceil(x/3) + math.ceil(x/2)
 ```

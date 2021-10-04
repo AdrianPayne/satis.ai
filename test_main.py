@@ -29,7 +29,7 @@ class TestMain(unittest.TestCase):
         local_data = '\n'.join(self.data_test[:2])
         output_expected = """R1,O1,ACCEPTED,5
         R1,TOTAL,5
-        R1,INVENTORY,94,197,197,99,99
+        R1,INVENTORY,97,197,197,99,99
         """
         self.assertEqual(output_expected, process_orders(local_data))
 
