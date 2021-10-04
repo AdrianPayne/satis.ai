@@ -47,16 +47,19 @@ class Restaurant:
             setattr(self, ingredient, getattr(self, ingredient) - ingredients_str.count(ingredient))
 
     def process_orders(self, order_list):
+        output = ''
         for order in order_list:
             # R1,2020-12-08 19:15:31,O1,BLT,LT,VLT
             ingredients_str = ','.join(order[3:]) + 'P' * (len(order) - 3)  # Add patties
             if self.ingredient_availability(ingredients_str):
                 self.take_ingredients(ingredients_str)
             else:
-                print('REJECT')
+                output += '\n' + f'{self.id},{order[2]},REJECTED'
 
         # Inventory
         inventory_str = f'R1,INVENTORY'
         for ingredient in self.ingredient_type:
             inventory_str += f',{getattr(self, ingredient)}'
-        return inventory_str
+        output += '\n' + inventory_str
+
+        return output[1:]  # Remove initial '\n'
